@@ -1,0 +1,215 @@
+/* ===== ACCOUNT PAGE ===== */
+.account-page {
+  padding: 48px 0 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+.account-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.account-card {
+  background: var(--bg-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ===== COLUMN STYLES ===== */
+.account-col {
+  padding: 40px;
+}
+
+.account-col-register {
+  border-right: 1px solid var(--border-color);
+}
+
+.account-col-login {
+  background: var(--bg-light);
+}
+
+.account-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.account-subheading {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* ===== FORM OVERRIDES ===== */
+.account-form .form-group {
+  margin-bottom: 18px;
+}
+
+.account-form .form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.account-form .form-input {
+  padding: 11px 14px;
+  font-size: 0.875rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-white);
+}
+
+.account-col-login .form-input {
+  background: var(--bg-white);
+}
+
+/* ===== FORGOT PASSWORD ===== */
+.forgot-password-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.forgot-password-link {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--accent);
+  cursor: pointer;
+  transition: color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.forgot-password-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.account-submit {
+  width: 100%;
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.account-submit:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ===== DIVIDER ===== */
+.account-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.account-divider-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.account-divider-text {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ===== GOOGLE BUTTON ===== */
+.google-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.google-btn:hover {
+  background: var(--bg-light);
+  border-color: var(--text-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.google-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #4285f4, #ea4335, #fbbc05, #34a853);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .account-page {
+    padding: 24px 0 40px;
+  }
+
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .account-col {
+    padding: 32px 24px;
+  }
+
+  .account-col-register {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+@media (max-width: 480px) {
+  .account-col {
+    padding: 24px 20px;
+  }
+
+  .account-heading {
+    font-size: 1.25rem;
+  }
+}

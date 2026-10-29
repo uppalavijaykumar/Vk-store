@@ -1,0 +1,30 @@
+.wishlist-page {
+  padding: 40px 0 80px;
+  background: var(--bg-light);
+  min-height: 80vh;
+}
+
+.wishlist-header {
+  margin-bottom: 32px;
+}
+
+.wishlist-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 6px 0;
+}
+
+.wishlist-empty {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}

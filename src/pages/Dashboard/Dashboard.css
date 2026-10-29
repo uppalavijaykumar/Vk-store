@@ -1,0 +1,328 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+.dashboard-sidebar {
+  width: 250px;
+  background: var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.dashboard-sidebar-logo {
+  padding: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-sidebar-logo h2 {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.dashboard-sidebar-logo span {
+  color: var(--accent);
+}
+
+.dashboard-sidebar-nav {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dashboard-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 16px;
+  background: transparent;
+  color: #94a3b8;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard-nav-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.dashboard-nav-item.active {
+  background: var(--accent);
+  color: white;
+}
+
+.dashboard-nav-item.logout {
+  margin-top: 40px;
+  color: #ef4444;
+}
+
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.dashboard-topbar {
+  height: 64px;
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+.dashboard-search {
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 6px 14px;
+  width: 320px;
+}
+
+.dashboard-search input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.dashboard-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dashboard-greeting {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.dashboard-user-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.dashboard-content {
+  padding: 32px;
+  flex: 1;
+}
+
+.dashboard-welcome-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-welcome-info h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.dashboard-welcome-info p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 4px;
+}
+
+/* Tracking Showcase Card */
+.tracking-showcase-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 28px;
+  border: 2px solid #93c5fd;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+  margin-bottom: 28px;
+}
+
+.tracking-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 28px;
+}
+
+.tracking-status-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: 1px solid #bfdbfe;
+}
+
+/* 4-Step Stepper */
+.tracking-stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  position: relative;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.step-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.step-item.completed .step-circle {
+  background: #16a34a;
+  color: white;
+}
+
+.step-item.current .step-circle {
+  background: #2563eb;
+  color: white;
+  box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+.step-title {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #1e293b;
+  margin-bottom: 4px;
+}
+
+.step-desc {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+/* Dashboard Orders Table */
+.dashboard-orders {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard-orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.dashboard-orders-table th {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 2px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.dashboard-orders-table td {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.88rem;
+}
+
+.dashboard-orders-table tr.active-row {
+  background: #eff6ff;
+}
+
+.gateway-mini-tag {
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.status-badge.delivered {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.in-transit, .status-badge.shipped {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.status-badge.processing {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+@media (max-width: 900px) {
+  .dashboard {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+  }
+  .tracking-stepper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,911 @@
+.checkout-page {
+  padding: 40px 0 80px;
+  background: var(--bg-light);
+  min-height: 85vh;
+}
+
+.checkout-breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.checkout-breadcrumbs a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.checkout-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  align-items: start;
+}
+
+.checkout-section-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.section-title-sm {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-light);
+  padding-bottom: 8px;
+}
+
+.form-group-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.form-group-grid.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.payment-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-method-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #ffffff;
+}
+
+.payment-method-card:hover {
+  border-color: #93c5fd;
+  background: #f8fafc;
+}
+
+.payment-method-card.active {
+  border-color: #5f259f;
+  background: #fdf4ff;
+}
+
+.payment-method-card input[type="radio"] {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.payment-method-info {
+  flex: 1;
+}
+
+.payment-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+  font-size: 0.95rem;
+}
+
+.gateway-brand {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.gateway-brand.phonepe {
+  color: #5f259f;
+}
+
+.gateway-brand.gpay {
+  color: #1a73e8;
+}
+
+.gateway-brand.paytm {
+  color: #002e6e;
+}
+
+.payment-sub {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.checkout-summary-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.checkout-items-mini {
+  max-height: 240px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.checkout-item-mini {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.checkout-item-mini img {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--border-color);
+}
+
+.checkout-item-detail {
+  flex: 1;
+}
+
+.item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.item-qty {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.item-price {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.pay-now-btn {
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 1.05rem;
+  background: #5f259f;
+  border-color: #5f259f;
+}
+
+.pay-now-btn:hover {
+  background: #4a1d7c;
+}
+
+.gateway-badges {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================== */
+/* REALISTIC PHONEPE SMARTPHONE FRAME & APP SIMULATOR             */
+/* ============================================================== */
+.gateway-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 16px;
+  animation: fadeIn 0.2s ease;
+}
+
+.phonepe-phone-frame {
+  width: 100%;
+  max-width: 390px;
+  height: 680px;
+  background: #ffffff;
+  border-radius: 36px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 0 10px #1e293b, 0 0 0 12px #334155;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.phone-notch {
+  width: 130px;
+  height: 22px;
+  background: #1e293b;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.notch-speaker {
+  width: 44px;
+  height: 4px;
+  background: #334155;
+  border-radius: 2px;
+}
+
+.notch-camera {
+  width: 7px;
+  height: 7px;
+  background: #334155;
+  border-radius: 50%;
+}
+
+.phone-status-bar {
+  padding: 6px 20px 2px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #1e293b;
+  background: #ffffff;
+  margin-top: 4px;
+}
+
+.phonepe-header {
+  background: #5f259f;
+  color: white;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.phonepe-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.pe-circle-logo {
+  width: 28px;
+  height: 28px;
+  background: white;
+  color: #5f259f;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.close-phonepe-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.phonepe-screen-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  overflow-y: auto;
+}
+
+/* Push Notification Toast */
+.phonepe-notification-toast {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #5f259f;
+  margin-bottom: 20px;
+  animation: dropDown 0.4s ease;
+}
+
+@keyframes dropDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.pe-notif-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.pe-circle-logo-small {
+  width: 18px;
+  height: 18px;
+  background: #5f259f;
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+}
+
+.notif-time {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: #94a3b8;
+}
+
+.pe-notif-body {
+  font-size: 0.82rem;
+  color: #334155;
+}
+
+/* Payment Request Card */
+.payment-request-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px 18px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.merchant-logo {
+  width: 50px;
+  height: 50px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 800;
+  margin: 0 auto 10px;
+}
+
+.merchant-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.merchant-upi {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 16px;
+}
+
+.paying-amount {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #5f259f;
+  margin-bottom: 12px;
+}
+
+.countdown-pill {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  margin-bottom: 16px;
+}
+
+.pe-instruction {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.phonepe-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 16px;
+}
+
+.btn-open-phonepe {
+  background: #5f259f;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(95, 37, 159, 0.35);
+}
+
+.btn-open-phonepe:hover {
+  background: #4a1d7c;
+}
+
+.btn-decline-phonepe {
+  background: transparent;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* PIN Screen */
+.pin-screen {
+  background: #ffffff;
+  padding: 14px;
+}
+
+.pin-merchant-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8fafc;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+.pin-merchant-bar small {
+  display: block;
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+.pin-amount {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #5f259f;
+}
+
+.upi-pin-display {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pin-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.5px;
+}
+
+.pin-dots {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 1.6rem;
+  margin: 12px 0;
+  color: #5f259f;
+}
+
+.pin-dot.filled {
+  color: #5f259f;
+}
+
+.pin-error-text {
+  color: #dc2626;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Numeric Keypad */
+.phonepe-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: auto;
+}
+
+.key-btn {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.key-btn:active {
+  background: #cbd5e1;
+  transform: scale(0.95);
+}
+
+.backspace-btn {
+  background: #e2e8f0;
+  font-size: 1.1rem;
+}
+
+.submit-pin-btn {
+  background: #16a34a;
+  color: white;
+  border-color: #16a34a;
+}
+
+.submit-pin-btn:active {
+  background: #15803d;
+}
+
+/* Processing State */
+.center-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.phonepe-spinner {
+  width: 56px;
+  height: 56px;
+  border: 4px solid #e2e8f0;
+  border-top-color: #5f259f;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* PhonePe Success View */
+.success-pe {
+  background: #ffffff;
+}
+
+.phonepe-success-circle {
+  width: 70px;
+  height: 70px;
+  background: #16a34a;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+}
+
+.success-amount {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.success-title {
+  color: #16a34a;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 6px 0;
+}
+
+.success-sub {
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.pe-txn-id {
+  background: #f8fafc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  margin-top: 14px;
+  border: 1px solid #e2e8f0;
+}
+
+.auto-redirect-msg {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 24px;
+}
+
+/* Failed View */
+.phonepe-fail-circle {
+  width: 70px;
+  height: 70px;
+  background: #ef4444;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.fail-title {
+  color: #ef4444;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.fail-reason {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 8px 0 16px;
+}
+
+.fail-note {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  margin-bottom: 24px;
+}
+
+.fail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn-retry-phonepe {
+  background: #5f259f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-cancel-phonepe {
+  background: transparent;
+  color: #64748b;
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.phone-bottom-bar {
+  width: 130px;
+  height: 5px;
+  background: #cbd5e1;
+  border-radius: 999px;
+  margin: 10px auto 8px;
+}
+
+/* Order Success Card */
+.order-success-card {
+  max-width: 620px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 44px 36px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+}
+
+.success-icon-wrap {
+  width: 76px;
+  height: 76px;
+  background: #dcfce7;
+  color: #16a34a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin: 0 auto 18px;
+}
+
+.success-heading {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.success-gateway-pill {
+  background: #eff6ff;
+  color: #5f259f;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+.order-receipt {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: left;
+  margin: 24px 0 32px;
+  border: 1px solid #e2e8f0;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+}
+
+.receipt-row:last-child {
+  margin-bottom: 0;
+}
+
+.success-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+}
+/* Mobile SMS Banner Alert */
+.mobile-sms-banner {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border-left: 4px solid #2563eb;
+  margin-bottom: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+.sms-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 4px;
+}
+
+.sms-body {
+  font-size: 0.8rem;
+  color: #334155;
+  line-height: 1.4;
+}
+
+/* In-App UPI Payment Experience */
+.in-app-payment-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.in-app-merchant-header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.in-app-avatar {
+  width: 54px;
+  height: 54px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin: 0 auto 8px;
+}
+
+.in-app-merchant-header h2 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.in-app-merchant-header p {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.in-app-amount-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  margin: 16px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.in-app-amount-box small {
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.in-app-amount-box h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+.in-app-account-select {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.bank-icon {
+  font-size: 1.6rem;
+}
+
+.bank-info {
+  flex: 1;
+}
+
+.bank-info strong {
+  display: block;
+  font-size: 0.85rem;
+  color: #1e293b;
+}
+
+.bank-info small {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+.check-icon {
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.npci-security-tag {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 16px;
+}
